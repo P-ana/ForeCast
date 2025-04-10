@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Archivo+Black&family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Archivo:ital,wght@0,100..900;1,100..900&family=Caveat&family=Cinzel+Decorative:wght@400;700;900&family=Comfortaa:wght@300..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Julius+Sans+One&family=League+Gothic&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sofia+Sans+Semi+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto Condensed", sans-serif;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+        font-size: 1rem;
+      }
+      
+.container{
+    background: linear-gradient(to right, #0f1928, #6da6a9); 
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+
+.search-bar{
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+    background-color:  #0f1928;
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    border-radius: 40px;
+    padding: 5px 0;
+}
+input{
+    width: 100%; 
+    border:none;
+    background: #0f1928;
+    outline: none;
+    padding: 10px 70px 10px 40px;
+    font-size: 16px;
+    outline: none;
+    color: white;
+    
+}
+
+input::placeholder{
+    color: white;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.2rem;
+    font-weight: light;
+}
+#check{
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    background: white;
+    border-radius: 50%;
+    font-family: "Roboto Condensed", sans-serif;
+    
+}
+
+
+#check:hover{
+    background-color:#FDDE55;
+}
+.icon{
+    fill: white;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    position: absolute;
+    left: 10px;
+}
+
+.btn-border{
+    position: absolute;
+    right: 10px;
+    border: 2px solid;
+    border-color: red green blue orange;
+    border-radius: 50%;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchIcon{
+    width: 15px;
+    height: 15px;
+    pointer-events: none;
+}

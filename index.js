@@ -54,7 +54,15 @@ app.get("/", async (req, res) => {
   }
 
   catch (error){
-    res.render("index", { content: JSON.stringify(error.response.data) });
+    res.render("index", {
+      weather: null,
+      temp: null,
+      city: null,
+      icon: null,
+      hourData: [],
+      userSearch: false,
+      error: JSON.stringify(error.response?.data || "An error occurred")
+    });
   }
         
       });   
@@ -97,11 +105,19 @@ res.render("index", {
 
 })}
 catch(error){
-  res.render("index", { content: JSON.stringify(error.response.data) });
+  res.render("index", {
+    weather: null,
+    temp: null,
+    city: null,
+    icon: null,
+    hourData: [],
+    userSearch: false,
+    error: JSON.stringify(error.response?.data || "An error occurred")
+  });
 }});
 
 
 
 app.listen(port,()=>{
     console.log(`Server is running on port ${port}`);
-});
+})

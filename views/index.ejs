@@ -42,7 +42,7 @@
               d="M0,160 C360,280 1080,40 1440,160 L1440,320 L0,320 Z" />
           </svg>
           <h2>Weather Today</h2>
-          <div class="forecast-list" style="display: flex; gap: 5px; align-items: center; justify-content: flex-start;margin: 0;">
+          <div class="forecast-list" style="display: flex; gap: 10px; align-items: center; justify-content: flex-start;margin: 0;">
             <% hourData.forEach(item => {%>
               <article class="today" aria-label="Morning weather">
                 <p><%=new Date(item.hour).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) %> </p>

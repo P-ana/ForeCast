@@ -19,7 +19,6 @@ app.set('view engine', 'ejs');
 
 
 
-
 app.get("/", async (req, res) => {
   try{
     const response= await axios.get(`${API_URL}?lat=46.0500268&lon=14.5069289&units=metric&appid=${API_KEY}`)
@@ -48,6 +47,15 @@ app.get("/", async (req, res) => {
       hourData,
       userSearch: false
     });
+    console.log({
+      weather,
+      temp,
+      city,
+      icon: iconUrl,
+      hourData,
+      userSearch: true/false
+    });
+    
   }
 
   catch (error){
@@ -93,15 +101,25 @@ app.get('/submit', async (req, res) => {
       hour: item.dt_txt,
       icon: item.weather[0].icon
 }))
+
 res.render("index", {
+  weather,
+  temp,
+  city,
+  icon:iconUrl,
+  hourData,
+  userSearch: true
+
+})
+console.log({
   weather,
   temp,
   city,
   icon: iconUrl,
   hourData,
-  userSearch: true
-
-})}
+  userSearch: true/false
+});
+}
 catch(error){
   res.render("index", {
     weather: null,

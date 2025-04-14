@@ -50,13 +50,13 @@
           </svg>
           <h2>Weather Today</h2>
           <div class="forecast-list" style="display: flex; gap: 10px; align-items: center; justify-content: flex-start;margin: 0;">
-            <% hourData.forEach(item => {%>
+            <%if(hourData && hourData.length>0){ hourData.forEach(item => {%>
               <article class="today" aria-label="Morning weather">
                 <p><%=new Date(item.hour).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) %> </p>
-                <img class="weatherIcon"  src="https://openweathermap.org/img/wn/<%= item.icon %>@2x.png" alt="icon" >
+                <img class="weatherIcon"   src="https://openweathermap.org/img/wn/<%= item.icon %>@2x.png" alt="Hourly weather icon" /> 
                 <p><%= item.temp %>°C</p>
                 </article>  
-           <% }); %>
+           <% })}; %>
             
             
           </div>

@@ -17,16 +17,12 @@ const API_KEY=process.env.API_KEY;
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-const config = {
-    headers: {
-      "x-api-key": `${API_KEY}`
-    }
-  };
+
 
 
 app.get("/", async (req, res) => {
   try{
-    const response= await axios.get(`${API_URL}?lat=46.0500268&lon=14.5069289&units=metric&appid=${API_KEY}`,config);
+    const response= await axios.get(`${API_URL}?lat=46.0500268&lon=14.5069289&units=metric&appid=${API_KEY}`)
     const list= response.data.list;
     let weather=list[0].weather[0].main;
     let temp=list[0].main.temp;
@@ -34,6 +30,7 @@ app.get("/", async (req, res) => {
     const city=response.data.city.name;
     const icon= list[0].weather[0].icon;
     const iconUrl=`https://openweathermap.org/img/wn/${icon}@2x.png`;
+    
    
     const listData=response.data.list.slice(1,5);
     const hourData = listData.map(item => ({
@@ -79,7 +76,7 @@ app.get('/submit', async (req, res) => {
   const lat=geoResponse.data[0].lat;
   const lon=geoResponse.data[0].lon;
   
-  const response= await axios.get(`${API_URL}?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`,config);
+  const response= await axios.get(`${API_URL}?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`);
   
   const list= response.data.list;
   let weather=list[0].weather[0].main;
@@ -88,7 +85,8 @@ app.get('/submit', async (req, res) => {
   const city=response.data.city.name;
   const icon= list[0].weather[0].icon;
   const iconUrl=`https://openweathermap.org/img/wn/${icon}@2x.png`;
-   
+  
+  
   const listData=response.data.list.slice(1,5);
   const hourData = listData.map(item => ({
       temp: item.main.temp,
